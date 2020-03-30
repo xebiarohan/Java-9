@@ -1,26 +1,26 @@
 # Java-9
 Java 9 features
 
-1. Immutable List
+1 Immutable List
 
        List.of(1,2,3);              // example
 
-       Characteristics :
+  Characteristics :
             cant add null value, it will give NullPointerException
             cant add more values to the list, it will give UnsupportedOperationException
             can add value only at the time of initialization
 
- 2. Immutable Set
-
+ 2 Immutable Set
+       
        Set.of(1,2,3);           //example
-
-       Characteristics :
+       
+   Characteristics :
             cant add duplicate values like Set.of(1,1,2), it will give IllegalArgumentException
             cant add null value, it will give NullPointerException
             cant add more values to the set, it will give UnsupportedOperationException
             can add value only at the time of initialization
 
-  3. Immutable Map
+  3 Immutable Map
 
         we can create Immutable map in 2 ways
 
@@ -30,5 +30,5 @@ Java 9 features
                 Map.entry(K2,V2)
            )
 
-        Characteristics :
+   Characteristics :
             cant add more values to the map, it will give UnsupportedOperationException
