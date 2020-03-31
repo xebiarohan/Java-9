@@ -5,7 +5,7 @@ Java 9 features
 
        List.of(1,2,3);              // example
 
-  Characteristics 
+  Characteristics :                                                                                                
            i) cant add null value, it will give NullPointerException.
            ii) cant add more values to the list, it will give UnsupportedOperationException.
            iii) can add value only at the time of initialization.
@@ -14,11 +14,11 @@ Java 9 features
        
        Set.of(1,2,3);           //example
        
-   Characteristics :
-           - cant add duplicate values like Set.of(1,1,2), it will give IllegalArgumentException.
-           - cant add null value, it will give NullPointerException.
-           - cant add more values to the set, it will give UnsupportedOperationException.
-           - can add value only at the time of initialization.
+   Characteristics :                                                                                                      
+           i) cant add duplicate values like Set.of(1,1,2), it will give IllegalArgumentException.
+           ii) cant add null value, it will give NullPointerException.
+           iii) cant add more values to the set, it will give UnsupportedOperationException.
+           iv) can add value only at the time of initialization.
 
   3 Immutable Map
 
