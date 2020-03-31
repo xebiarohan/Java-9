@@ -53,3 +53,16 @@ Java 9 features
         iv) iterate
             Till java8 iterate method comes with seed and operator only. From java9 iterate
             comes with  predicate.
+
+
+  6. Optional modifications :
+
+        i) or
+            this is used to get an optional in response if value is null
+
+        ii) ifPresentOrElse
+            passing 2 method 1st as a Consumer and second as a Runnable, Consumer will get executed
+            if value evaluates to notnull and Runnable method will get executed if value evaluates to null
+
+        iii) stream
+                Used to get streamed data of Optional
