@@ -30,8 +30,8 @@ Java 9 features
                 Map.entry(K2,V2)
            )
 
-   Characteristics :
-           - cant add more values to the map, it will give UnsupportedOperationException.
+   Characteristics :                                                                                                      
+           i) cant add more values to the map, it will give UnsupportedOperationException.
 
 
   4 '_' becomes keyword
@@ -40,6 +40,7 @@ Java 9 features
 
 
   5 Stream modifications :
+  
         i) ofNullable
             to wrap a value which may be null. Prevent from null pointer
 
