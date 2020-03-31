@@ -24,7 +24,7 @@ Java 9 features
 
         we can create Immutable map in 2 ways
 
-        i)  Map.of(K1,V1,K2,V2);       // K is key and V is value
+        i)  Map.of(K1,V1,K2,V2);      // K is key and V is value
         ii) Map.ofEntries(
                 Map.entry(K1,V1),
                 Map.entry(K2,V2)
