@@ -6,19 +6,19 @@ Java 9 features
        List.of(1,2,3);              // example
 
   Characteristics :
-            cant add null value, it will give NullPointerException
-            cant add more values to the list, it will give UnsupportedOperationException
-            can add value only at the time of initialization
+           - cant add null value, it will give NullPointerException.
+           - cant add more values to the list, it will give UnsupportedOperationException.
+           - can add value only at the time of initialization.
 
  2 Immutable Set
        
        Set.of(1,2,3);           //example
        
    Characteristics :
-            cant add duplicate values like Set.of(1,1,2), it will give IllegalArgumentException
-            cant add null value, it will give NullPointerException
-            cant add more values to the set, it will give UnsupportedOperationException
-            can add value only at the time of initialization
+           - cant add duplicate values like Set.of(1,1,2), it will give IllegalArgumentException.
+           - cant add null value, it will give NullPointerException.
+           - cant add more values to the set, it will give UnsupportedOperationException.
+           - can add value only at the time of initialization.
 
   3 Immutable Map
 
@@ -31,4 +31,24 @@ Java 9 features
            )
 
    Characteristics :
-            cant add more values to the map, it will give UnsupportedOperationException
+           - cant add more values to the map, it will give UnsupportedOperationException.
+
+
+  4 '_' becomes keyword
+        cant use it as a user defined name
+            String _ = "alpha";        // compilation error
+
+
+  5 Stream modifications :
+        i) ofNullable
+            to wrap a value which may be null. Prevent from null pointer
+
+        ii) takeWhile
+            takes a predicate and decides till when to process data
+
+        iii) dropWhile
+            takes a predicate and decides from which takes to start processing data
+
+        iv) iterate
+            Till java8 iterate method comes with seed and operator only. From java9 iterate
+            comes with  predicate.
