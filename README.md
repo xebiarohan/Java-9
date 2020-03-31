@@ -55,7 +55,8 @@ Java 9 features
             comes with  predicate.
 
 
-  6. Optional modifications :
+  6 Optional modifications :
+
 
         i) or
             this is used to get an optional in response if value is null
