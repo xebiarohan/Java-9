@@ -76,4 +76,12 @@ Java 9 features
        
  8 Try with resource
  
+       Try with resource was introduced in Java 7 but we have to declare and use define the object in try 
+       only. we cannot use object which is already  defined outside try. 
+       
+       So it Java 9, we can use object which is defined outside try. Object must be implementing either 
+       autocloseable or closeable interface and object must be final of effective final
+       
+      we can use multiple object in try block using ';' as delimiter
+ 
      
