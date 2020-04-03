@@ -67,3 +67,13 @@ Java 9 features
 
         iii) stream
                 Used to get streamed data of Optional
+                
+ 
+ 7 Private method in interface
+ 
+       
+       Private method interface is used to remove duplicate code from the default method.
+       
+ 8 Try with resource
+ 
+     
