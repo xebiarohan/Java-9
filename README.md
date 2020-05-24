@@ -2,8 +2,9 @@
 Java 9 features
 
 1 Immutable List
-
+```java
        List.of(1,2,3);              // example
+```
 
   Characteristics :                                                                                                
            i) cant add null value, it will give NullPointerException.
@@ -11,9 +12,10 @@ Java 9 features
            iii) can add value only at the time of initialization.
 
  2 Immutable Set
-       
+```java       
        Set.of(1,2,3);           //example
-       
+```
+
    Characteristics :                                                                                                      
            i) cant add duplicate values like Set.of(1,1,2), it will give IllegalArgumentException.
            ii) cant add null value, it will give NullPointerException.
@@ -23,12 +25,13 @@ Java 9 features
   3 Immutable Map
 
         we can create Immutable map in 2 ways
-
+```java
         i)  Map.of(K1,V1,K2,V2);      // K is key and V is value
         ii) Map.ofEntries(
                 Map.entry(K1,V1),
                 Map.entry(K2,V2)
            )
+```
 
    Characteristics :                                                                                                      
            i) cant add more values to the map, it will give UnsupportedOperationException.
@@ -36,37 +39,37 @@ Java 9 features
 
   4 '_' becomes keyword
         cant use it as a user defined name
+```java        
             String _ = "alpha";        // compilation error
-
+```
 
   5 Stream modifications :
   
-        i) ofNullable
-            to wrap a value which may be null. Prevent from null pointer
+ i) ofNullable
+     to wrap a value which may be null. Prevent from null pointer
 
-        ii) takeWhile
-            takes a predicate and decides till when to process data
+ ii) takeWhile
+     takes a predicate and decides till when to process data
 
-        iii) dropWhile
-            takes a predicate and decides from which takes to start processing data
+ iii) dropWhile
+     takes a predicate and decides from which takes to start processing data
 
-        iv) iterate
-            Till java8 iterate method comes with seed and operator only. From java9 iterate
-            comes with  predicate.
-
-
-  6 Optional modifications :
+ iv) iterate
+     Till java8 iterate method comes with seed and operator only. From java9 iterate
+     comes with  predicate.
 
 
-        i) or
-            this is used to get an optional in response if value is null
+ 6 Optional modifications :
 
-        ii) ifPresentOrElse
-            passing 2 method 1st as a Consumer and second as a Runnable, Consumer will get executed
-            if value evaluates to notnull and Runnable method will get executed if value evaluates to null
+       i) or
+       this is used to get an optional in response if value is null
 
-        iii) stream
-                Used to get streamed data of Optional
+       ii) ifPresentOrElse
+       passing 2 method 1st as a Consumer and second as a Runnable, Consumer will get executed
+       if value evaluates to notnull and Runnable method will get executed if value evaluates to null
+
+       iii) stream
+         Used to get streamed data of Optional
                 
  
  7 Private method in interface
