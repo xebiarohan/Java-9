@@ -2,52 +2,59 @@
 
 ## Java 9 features
 
-1 Immutable List
+#### Immutable List
+Creates a immutable list (read-only), cannot modify the list once it is created.
+
 ```java
-       List.of(1,2,3);              // example
+       List.of(1,2,3);              
 ```
 
-  Characteristics :                                                                                                
-           -> cant add null value, it will give NullPointerException.
-           -> cant add more values to the list, it will give UnsupportedOperationException.
-           -> can add value only at the time of initialization.
+Characteristics :                                                                                                
+           - Cannot add null value, it will give NullPointerException.
+           - Cannot add more values to the list, it will give UnsupportedOperationException.
+           - Can add values only at the time of initialization.
 
- 2 Immutable Set
+#### Immutable Set
 ```java       
-       Set.of(1,2,3);           //example
+       Set.of(1,2,3);           
 ```
 
-   Characteristics :                                                                                                      
-           i) cant add duplicate values like Set.of(1,1,2), it will give IllegalArgumentException.
-           ii) cant add null value, it will give NullPointerException.
-           iii) cant add more values to the set, it will give UnsupportedOperationException.
-           iv) can add value only at the time of initialization.
+Characteristics :                                                                                                      
+           - Cannot add duplicate values like Set.of(1,1,2), it will give IllegalArgumentException.
+           - Cannot add null value, it will give NullPointerException.
+           - Cannot add more values to the set, it will give UnsupportedOperationException.
+           - Can add values only at the time of initialization.
 
-  3 Immutable Map
+#### Immutable Map
+we can create immutable map in 2 ways:
 
-        we can create Immutable map in 2 ways
 ```java
-        i)  Map.of(K1,V1,K2,V2);      // K is key and V is value
-        ii) Map.ofEntries(
+          Map.of(K1,V1,K2,V2);      // K is key and V is value
+```
+AND
+
+```
+         Map.ofEntries(
                 Map.entry(K1,V1),
                 Map.entry(K2,V2)
-           )
+           );
 ```
 
-   Characteristics :                                                                                                      
-           i) cant add more values to the map, it will give UnsupportedOperationException.
+Characteristics :                                                                                                      
+           i) Cannot add more values to the map, it will give UnsupportedOperationException.
 
 
-  4 '_' becomes keyword
-        cant use it as a user defined name
+#### '\_' becomes a keyword
+        Cannot use it as a user defined name.
+        
 ```java        
             String _ = "alpha";        // compilation error
 ```
 
-  5 Stream modifications :
+#### Stream modifications :
   
  i) ofNullable
-     to wrap a value which may be null. Prevent from null pointer
+     to wrap a value which may be null. Prevent from null pointer.
 
  ii) takeWhile
      takes a predicate and decides till when to process data
@@ -60,7 +67,7 @@
      comes with  predicate.
 
 
- 6 Optional modifications :
+#### Optional modifications :
 
        i) or
        this is used to get an optional in response if value is null
