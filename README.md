@@ -1,5 +1,6 @@
-# Java-9
-Java 9 features
+# Revising all java features from JAVA-9 to JAVA-14
+
+## Java 9 features
 
 1 Immutable List
 ```java
@@ -7,9 +8,9 @@ Java 9 features
 ```
 
   Characteristics :                                                                                                
-           i) cant add null value, it will give NullPointerException.
-           ii) cant add more values to the list, it will give UnsupportedOperationException.
-           iii) can add value only at the time of initialization.
+           -> cant add null value, it will give NullPointerException.
+           -> cant add more values to the list, it will give UnsupportedOperationException.
+           -> can add value only at the time of initialization.
 
  2 Immutable Set
 ```java       
