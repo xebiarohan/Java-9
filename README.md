@@ -167,3 +167,63 @@ We can use multiple object in try block using ';' as delimiter like:
 ```
  
      
+     
+## Java 10
+
+#### Local variable type inference
+
+Until java 9 we have to mention the type of the local variable explicitly and ensure it was compatible with the initializer used to initialize it:
+
+```
+int a = 10;
+```
+
+now from Java 10 we dont have to specify the data type of variable, compiler itself infers the type of message from the type of the initializer present on the right-hand side. we can just define it with var keyword
+
+```java
+var a = 10;
+```
+
+Compiler will understand that it is a integer using the value on the right side. It can be only used for local variabes with initializer, it cannot be used as member
+variable, parameter and return value.
+
+
+#### List.copyOf()
+
+In Java-9 we get List.of() method which creates a unmodifiable list from the elements but if we want to make a list from other collection we did not had any method in
+Java-9. So, in Java-10 we got this copyOf() method which takes a collection and makes a unmodifiable list from it.
+
+```java
+List<Integers> list = Arrays.asList(1,2,3);
+
+List<Integer> integers = List.copyOf(list);
+```
+
+If we try to alter this unmodifiable list then we will get 'java.lang.UnsupportedOperationException'. In this example we used list as argument, here we can use any
+collection.
+
+#### Set.copyOf()
+
+It is similar to the List.copyOf() method and for acheiving the same goal.
+
+```java
+List<Integers> list = Arrays.asList(1,2,3);
+
+Set<Integer> unmodifiableSet = Set.copyOf(list);
+```
+
+
+#### Map.copyOf()
+
+Map also has the same method in Java-10.
+
+```java
+Map<String,Integer> map = new HashMap<>();
+map.put("alpha",1);
+map.put("beta",2);
+
+Map.copyOf(map);        
+```        
+
+
+
