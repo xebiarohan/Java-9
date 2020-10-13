@@ -226,4 +226,22 @@ Map.copyOf(map);
 ```        
 
 
+#### Collectors.toUnmodifiable*()
 
+In Java-10 there is a new method introduced in Collectors to make collection unmodifiable, any try to make a change in this unmodifiable list will result in UnsupportedOperationException.
+
+```java
+List<String> strings = Arrays.asList("alpha","beta","gamma");
+List<String> collect = strings.stream().collect(Collectors.toUnmodifiableList());
+```
+Similarly we have toUnmodifiableMap() and toUnmodifiableSet() to create read-only map and set respectively.
+
+#### orElseThrow() method in Optional
+
+All types of optional (OptionalInt, OptionalDouble, OptionalLong and Optional) got a new method in Java-10 which throws NoSuchElementException
+when no element is present in optional.
+
+```java
+List<Integer> integers = Arrays.asList(1, 2, 3, 4);
+Integer integer = integers.stream().filter(x -> x > 10).findFirst().orElseThrow();
+```
