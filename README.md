@@ -342,3 +342,130 @@ data type is not allowed with var.
 
 
 
+## Java 12 Features
+
+#### Switch statement
+Java 12 introduced lambda expression in switch statements. Till Java 11 if we want to use switch statement then we use to use it like:
+
+```java
+String result = "";
+int number = 1;
+switch (number) {
+    case 1:
+    case 3: {
+        result = "odd number";
+        break;
+    }
+
+    case 2:
+    case 4: {
+        result = "even number";
+        break;
+    }
+
+    default: {
+        throw new NumberFormatException();
+    }
+
+}
+```
+
+Now we can write the same switch expression with lambda expression like:
+
+```java
+String result = "";
+int number = 1;
+result = switch (number) {
+    case 1, 3 -> "odd numbers";
+    case 2, 4 -> "even numbers";
+    default -> {
+        throw new NumberFormatException();
+    }
+};
+
+```
+
+#### File.mismatch method
+
+Java 12 introduced a new method to compare 2 files present at different locations, it returns the location of the first mismatch byte between the 2 files or -1L if both
+the files are identical.
+
+```java
+public static long mismatch(Path path, Path path2) throws IOException
+```
+It compares the bytes of the files and returns the first byte which does not match, if all bytes matches then returns -1L.
+
+
+#### Collectors.teeing()
+This new collectors method takes 2 collector and 1 BiFunction
+
+```java
+
+public static <T, R1, R2, R> Collector<T, ?, R> teeing(Collector<? super T, ?, R1> downstream1,
+                          Collector<? super T, ?, R2> downstream2,
+                          BiFunction<? super R1, ? super R2, R> merger) {
+    return teeing0(downstream1, downstream2, merger);
+}
+```
+
+So the result of first 2 collectors becomes the arguments of the Bifunction, lets understand with an example:
+
+If we have a list of numbers and we want to calculate odd numbers are more or even numbers, how can we acheive this with teeing.
+
+So we can calculate the number of odd numbers in 1st collector of the teeing method, even numbers in 2nd collector and can compute which one is more in function.
+
+```java
+Boolean isEvenDominatedList = Stream.of(1, 2, 3, 4, 5)
+        .collect(Collectors.teeing(
+                Collectors.filtering(x -> x % 2 == 0, Collectors.toList()),
+                Collectors.filtering(x -> x % 2 != 0, Collectors.toList()),
+                (evenList, oddList) -> evenList.size() > oddList.size()
+        ));
+```
+
+#### String new Methods
+Java-12 introduced few new string methods
+
+##### indent()
+This method is used to add or remove white spaces in a multi line string.
+
+```java
+ String intro = "My\nname id\nRohan.";
+ 
+ System.out.println(intro);
+ 
+//My
+//name id
+//Rohan.
+
+System.out.println(intro.indent(2));
+
+//  My
+//  name id
+//  Rohan.
+ 
+```
+
+Similarly if we have white space in a multiline string we can remove it using negative value in the same method.
+
+##### transform()
+As the name suggests this method is used to transform a string into another value using a java.util.Function
+
+```java
+Integer transform = "x".transform(x -> x.length());
+String transform1 = "alpha".transform(x -> x + "beta");
+```
+
+we can apply any function and transform a string in any format we want.
+
+
+##### describeConstable()
+It is used to get optional value of any string
+
+```java
+String name = "Rohan"
+Optional<String> optionalName = name.describeConstable();
+System.out.println(optionalName);       
+
+// Optional[Rohan]
+```
