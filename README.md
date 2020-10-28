@@ -1,6 +1,6 @@
 # Revising all java features from JAVA-9 to JAVA-14
 
-## Java 9 features
+## Java 9 Features
 
 #### Immutable List
 Creates a immutable list (read-only), cannot modify the list once it is created.
@@ -168,7 +168,7 @@ We can use multiple object in try block using ';' as delimiter like:
  
      
      
-## Java 10
+## Java 10 Features
 
 #### Local variable type inference
 
@@ -245,3 +245,100 @@ when no element is present in optional.
 List<Integer> integers = Arrays.asList(1, 2, 3, 4);
 Integer integer = integers.stream().filter(x -> x > 10).findFirst().orElseThrow();
 ```
+
+
+## JAVA 11 Features
+
+#### Running java class with a single command
+
+Till Java-10 we first need to compile the code with javac command then we can run it with java command but from Java-11 we can directly run our java class using
+java command without compiling it with javac command.
+
+```java
+// Till java 10
+javac Myclass.java
+java Myclass
+
+// From Java 11
+
+java Myclass
+```
+
+#### New String methods
+Java 11 added new string methods:
+
+##### isBlank()
+Checks if the current string value is blank or not, empty string or the string with white spaces only will be considered as blank string. This method will throw
+NullPointerException in case string value is null.
+
+```java
+String str1 = "";
+boolean isStr1Blank = str1.isBlank();   //true
+
+String str2 = null;
+boolean isStr2Blank = str1.isBlank();   //java.lang.NullPointerException
+
+String str3 = "alpha";
+boolean isStr3Blank = str3.isBlank();   //false
+
+```
+
+##### lines()
+This method returns a stream of strings, which is a collection of all substrings split by lines.
+
+```java
+String essay = "line1\nline2\nline3";
+System.out.println("Current value:");
+System.out.println(essay);
+
+System.out.println("List :");
+List<String> collect = essay.lines().collect(Collectors.toList());
+System.out.println(collect);
+
+//Current value:
+//line1
+//line2
+//line3
+
+//List:
+//[line1, line2, line3]
+
+```
+
+##### strip(), stripLeading(), stripTrailing()
+These methods are used to remove the all the white spaces, leadingwhite spaces and trailing white spaces from a string. It is like a advanced version of trim,
+strip is unicode aware. Unicode was not there at the time of trim.
+
+```java
+String className = "  My Class  ";
+
+System.out.println(className.strip());              // "MyClass"
+System.out.println(className.stripLeading());       // "My Class  "
+System.out.println(className.stripTrailing());      // "  My Class"
+
+```
+
+##### repeat()
+It repeats the given string that many number of times as mentioned in the given parameter value.
+
+```java
+String plus = "+";
+
+System.out.println(plus.repeat(3));    // +++
+```
+
+#### Local variable syntax for lambda expression
+In Java-10 we saw the usage of var keyword for declaring local variables, now in java 11 we can use it in the lambda expressions
+
+```java
+(var a, var b) -> a+b;    // valid expression
+
+var a, var b  -> a +b;    // invalid expression
+
+var a, int b -> a+b;   // invalid expression
+```
+Second expression is invalid because we need to have parenthesis if we are using var in lambda expression and third expression is invalid because mixing of any other
+data type is not allowed with var.
+
+
+
