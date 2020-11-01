@@ -345,7 +345,7 @@ data type is not allowed with var.
 ## Java 12 Features
 
 #### Switch statement
-Java 12 introduced lambda expression in switch statements. Till Java 11 if we want to use switch statement then we use to use it like:
+Java 12 introduced lambda expression in switch statements (preview feature). Till Java 11 if we want to use switch statement then we use to use it like:
 
 ```java
 String result = "";
@@ -516,3 +516,58 @@ It is used to remove the incidental white space characters from the beginning an
 
 ##### translateEscapes()
 It returns a string whose value is this string, with escape sequences translated as if in a string literal.
+
+
+## Java-14 features
+
+#### Switch expression
+Java-12 intorduced the switch expression as a preview feature, Java-13 added some extra functionality in it (yield to return value) but kept it in preview feature list. Now Java-14 officially added it in the feature list.
+
+#### Pattern matching
+In java we use pattern matching using 'instanceOf' keyword, we usually use it for type casting some value like
+
+```java
+if(v instancef String) {
+   String value = (String) v;
+   System.out.println(value);
+}
+```
+As we can see in this example first we are checking if the value of 'v' is an instance of String, if it is an instance of string then we are assigning a variable
+to its value. Now from Java-14 we can combine these 2 steps like
+
+```java
+if(v instanceOf String value) {
+   System.out.println(value);
+}
+```
+
+#### NullPointerExceptions logs
+The biggest enemy of any developer is a NullPointerException, sometimes it becomes difficult to check which part of the code is causing NullPointerException like
+
+```java
+person.getAddress().getSector().getHouseNumber()
+```
+
+If we get NullPointerException here, its hard to tell from logs exactly because of which value it is causing NullPointerException.
+Now from Java-14 we get very specific logs for an exception 
+
+```java
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "Address.getSector()" because the return value of "Person.getAddress()" is null.
+```
+
+Here we can see where the exact problem is.
+
+#### Records
+JDK 14 introduces records, which are a new kind of type declaration. Like an enum, a record is a restricted form of a class. It’s ideal for "plain data carriers," classes that contain data not meant to be altered and only the most fundamental methods such as constructors and accessors. 
+
+```java
+record Person() {}
+OR
+
+record Person(String firstName, String lastName) {}
+```
+
+The Java compiler will generate a constructor, private final fields, accessors, equals/hashCode and toString methods automatically.
+
+for more information about record, please refer : https://docs.oracle.com/en/java/javase/14/language/records.html
+
