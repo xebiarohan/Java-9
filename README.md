@@ -469,3 +469,50 @@ System.out.println(optionalName);
 
 // Optional[Rohan]
 ```
+
+
+## Java-13
+
+#### Text block
+
+Java 13 introduced a new text block preview feature, preview feature means it will not work by default, you have to enable it. It allows us to create multiline string
+easily.
+
+```java
+String html = """
+		<html>
+		<head>
+			<link href='/css/style.css' rel='stylesheet' />
+		</head>
+		<body>
+                        <h1>Hello World</h1>
+    </body>
+    </html>""";
+
+```
+
+
+#### Modification in switch expression
+Java-12 introduced switch expression, Java-13 has the same but it replaced break with yield keyword. 'yield' is used to return a value from a switch case.
+
+```java
+String result = switch (number) {
+      case 1,3:
+          yield "odd";
+      case 2,4:
+          yield "even";
+      default:
+          throw new NumberFormatException();
+};
+```
+
+#### New String methods
+
+##### formatted(Object… args)
+It is similar to the String format() method. It’s added to support formatting with the text blocks.
+
+##### stripIndent()
+It is used to remove the incidental white space characters from the beginning and end of every line in the text block. This method is used by the text blocks and it preserves the relative indentation of the content.
+
+##### translateEscapes()
+It returns a string whose value is this string, with escape sequences translated as if in a string literal.
